@@ -1,4 +1,4 @@
-/* function formatString(input: string, toUpper?: boolean): string {
+function formatString(input: string, toUpper?: boolean): string {
   if (toUpper || typeof toUpper === "undefined") {
     return input.toUpperCase();
   } else {
@@ -8,9 +8,7 @@
 
 console.log(formatString("Hello"));
 console.log(formatString("Hello", false));
-console.log(formatString("Hello", true)); */
-
-/* Problem 2 */
+console.log(formatString("Hello", true));
 
 type FilterByRating = {
   title: string;
@@ -30,3 +28,14 @@ const books = [
 const result = filterByRating(books);
 
 console.log(result);
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  // return arrays.flat();
+  return ([] as T[]).concat(...arrays);
+}
+
+const resultOne = concatenateArrays(["a", "b"], ["c"]);
+const resultTwo = concatenateArrays([1, 2], [3, 4], [5]);
+
+console.log(resultOne);
+console.log(resultTwo);
