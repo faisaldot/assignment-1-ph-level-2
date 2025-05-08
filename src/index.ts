@@ -1,4 +1,4 @@
-function formatString(input: string, toUpper?: boolean): string {
+/* function formatString(input: string, toUpper?: boolean): string {
   if (toUpper || typeof toUpper === "undefined") {
     return input.toUpperCase();
   } else {
@@ -84,3 +84,32 @@ const processValueResultTwo = processValue(10);
 
 console.log(processValueResult);
 console.log(processValueResultTwo);
+ */
+
+/* Problem 6 */
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExProduct(products: Product[]): Product | null {
+  if (products.length === 0) {
+    return null;
+  } else {
+    const result = products.reduce((acc, curr) =>
+      curr.price > acc.price ? curr : acc
+    );
+    return result;
+  }
+}
+
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+];
+
+const getMostExProductResult = getMostExProduct(products);
+const getMostExProductResultNull = getMostExProduct([]);
+console.log(getMostExProductResult);
