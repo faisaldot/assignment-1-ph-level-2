@@ -84,9 +84,6 @@ const processValueResultTwo = processValue(10);
 
 console.log(processValueResult);
 console.log(processValueResultTwo);
- */
-
-/* Problem 6 */
 
 interface Product {
   name: string;
@@ -113,3 +110,28 @@ const products = [
 const getMostExProductResult = getMostExProduct(products);
 const getMostExProductResultNull = getMostExProduct([]);
 console.log(getMostExProductResult);
+ */
+
+/* Problem 7: */
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+
+function getDayType(day: Day): string {
+  if (day === Day.Saturday || day === Day.Sunday) {
+    return "Weekend";
+  } else {
+    return "Weekday";
+  }
+}
+
+const getDayResult = getDayType(Day.Sunday);
+
+console.log(getDayResult);
