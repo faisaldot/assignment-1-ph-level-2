@@ -70,3 +70,17 @@ const myCar = new Car("Toyota", 2020, "Corolla");
 
 myCar.getInfo();
 myCar.getModel();
+
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    return value.length;
+  } else {
+    return value * 2;
+  }
+}
+
+const processValueResult = processValue("Bangladesh");
+const processValueResultTwo = processValue(10);
+
+console.log(processValueResult);
+console.log(processValueResultTwo);
