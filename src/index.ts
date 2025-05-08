@@ -1,5 +1,11 @@
-function add(numOne: number, numTwo: number) {
-  return numOne + numTwo;
+function formatString(input: string, toUpper?: boolean): string {
+  if (toUpper || typeof toUpper === "undefined") {
+    return input.toUpperCase();
+  } else {
+    return input.toLowerCase();
+  }
 }
 
-const result = add(1, 2);
+console.log(formatString("Hello"));
+console.log(formatString("Hello", false));
+console.log(formatString("Hello", true));
