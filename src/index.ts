@@ -1,4 +1,4 @@
-/* function formatString(input: string, toUpper?: boolean): string {
+function formatString(input: string, toUpper?: boolean): string {
   if (toUpper || typeof toUpper === "undefined") {
     return input.toUpperCase();
   } else {
@@ -110,9 +110,6 @@ const products = [
 const getMostExProductResult = getMostExProduct(products);
 const getMostExProductResultNull = getMostExProduct([]);
 console.log(getMostExProductResult);
- */
-
-/* Problem 7: */
 
 enum Day {
   Monday,
@@ -135,3 +132,17 @@ function getDayType(day: Day): string {
 const getDayResult = getDayType(Day.Sunday);
 
 console.log(getDayResult);
+
+async function squareAsync(n: number): Promise<number> {
+  return new Promise((resolve, reject) => {
+    if (n < 0) {
+      reject(new Error("Negative number not allowed"));
+    }
+    setTimeout(() => {
+      resolve(n * n);
+    }, 1000);
+  });
+}
+
+squareAsync(4).then(console.log);
+squareAsync(-3).catch(console.error);
